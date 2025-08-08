@@ -1,6 +1,6 @@
 ---
-# the default layout is 'page'
-icon: fas fa-code-branch
+title: CLI Extensions
+icon: fas fa-terminal
 order: 5
 ---
 
