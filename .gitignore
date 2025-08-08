@@ -21,3 +21,5 @@ package-lock.json
 # Link Checker
 link-checker.json
 error.txt
+
+.DS_Store
