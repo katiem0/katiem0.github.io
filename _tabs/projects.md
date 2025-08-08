@@ -4,11 +4,30 @@ icon: fas fa-terminal
 order: 5
 ---
 
-# GitHub CLI Extensions
-
 I develop and maintain several GitHub CLI extensions that help organizations and developers manage their GitHub environments more efficiently. These tools focus on automation, migration, and management of GitHub resources.
 
-## Featured Projects
+All my extensions can be found [here](https://github.com/katiem0?tab=repositories&q=topic%3Agh-extension&type=&language=&sort=stargazers)
+
+## Featured Extensions
+
+### [gh-bbc-exporter](https://github.com/katiem0/gh-bbc-exporter)
+
+![GitHub Stars](https://img.shields.io/github/stars/katiem0/gh-bbc-exporter?style=social)
+![Release](https://img.shields.io/github/v/release/katiem0/gh-bbc-exporter)
+![License](https://img.shields.io/github/license/katiem0/gh-bbc-exporter)
+
+A GitHub CLI extension to create a Bitbucket Cloud archive for import to GitHub Cloud.
+
+**Key Features:**
+- Creates export archives compatible with GitHub Enterprise Importer
+- Preserves repository metadata, git objects, and pull requests
+- Maps Bitbucket users to GitHub users
+- Supports both Basic Authentication and Access Tokens
+
+**Installation:**
+```bash
+gh extension install katiem0/gh-bbc-exporter
+```
 
 ### [gh-environments](https://github.com/katiem0/gh-environments)
 
@@ -48,62 +67,6 @@ A GitHub CLI extension to manage Secrets and Variables for organizations and rep
 gh extension install katiem0/gh-seva
 ```
 
-### [gh-bbc-exporter](https://github.com/katiem0/gh-bbc-exporter)
-
-![GitHub Stars](https://img.shields.io/github/stars/katiem0/gh-bbc-exporter?style=social)
-![Release](https://img.shields.io/github/v/release/katiem0/gh-bbc-exporter)
-![License](https://img.shields.io/github/license/katiem0/gh-bbc-exporter)
-
-A GitHub CLI extension to create a Bitbucket Cloud archive for import to GitHub Cloud.
-
-**Key Features:**
-- Creates export archives compatible with GitHub Enterprise Importer
-- Preserves repository metadata, git objects, and pull requests
-- Maps Bitbucket users to GitHub users
-- Supports both Basic Authentication and Access Tokens
-
-**Installation:**
-```bash
-gh extension install katiem0/gh-bbc-exporter
-```
-
-### [gh-migrate-rulesets](https://github.com/katiem0/gh-migrate-rulesets)
-
-![GitHub Stars](https://img.shields.io/github/stars/katiem0/gh-migrate-rulesets?style=social)
-![Release](https://img.shields.io/github/v/release/katiem0/gh-migrate-rulesets)
-![License](https://img.shields.io/github/license/katiem0/gh-migrate-rulesets)
-
-A GitHub CLI extension to create and generate reports of repository rulesets for repos and orgs.
-
-**Key Features:**
-- Generate detailed reports of repository rulesets
-- Create rulesets from CSV templates
-- Copy rulesets between organizations
-- Support for all ruleset types including branch protection and workflow rules
-
-**Installation:**
-```bash
-gh extension install katiem0/gh-migrate-rulesets
-```
-
-### [gh-organization-webhooks](https://github.com/katiem0/gh-organization-webhooks)
-
-![GitHub Stars](https://img.shields.io/github/stars/katiem0/gh-organization-webhooks?style=social)
-![Release](https://img.shields.io/github/v/release/katiem0/gh-organization-webhooks)
-![License](https://img.shields.io/github/license/katiem0/gh-organization-webhooks)
-
-A GitHub CLI extension to manage organization webhooks.
-
-**Key Features:**
-- List organization-level webhooks with detailed information
-- Create webhooks from CSV templates
-- Copy webhooks between organizations
-- Detailed reporting of webhook configurations
-
-**Installation:**
-```bash
-gh extension install katiem0/gh-organization-webhooks
-```
 
 ## Using My Extensions
 
