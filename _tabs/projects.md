@@ -6,7 +6,7 @@ order: 5
 
 I develop and maintain several GitHub CLI extensions that help organizations and developers manage their GitHub environments more efficiently. These tools focus on automation, migration, and management of GitHub resources.
 
-All my extensions can be found [here](https://github.com/katiem0?tab=repositories&q=topic%3Agh-extension&type=&language=&sort=stargazers)
+A full list of extensions can be found [here](https://github.com/katiem0?tab=repositories&q=topic%3Agh-extension&type=&language=&sort=stargazers).
 
 ## Featured Extensions
 
@@ -71,16 +71,6 @@ gh extension install katiem0/gh-seva
 ## Using My Extensions
 
 All of my GitHub CLI extensions require the [GitHub CLI](https://cli.github.com/) to be installed and authenticated. Most extensions support both GitHub.com and GitHub Enterprise Server environments.
-
-### General Usage Pattern
-
-Most of my extensions follow a similar pattern:
-1. **List/Export**: Generate reports about current configurations
-2. **Create/Import**: Create resources based on CSV files or copy from another organization
-
-### Authentication
-
-Depending on the extension, you may need different scopes for your GitHub authentication. Always check the README of each extension for specific authentication requirements.
 
 ## Contributing
 

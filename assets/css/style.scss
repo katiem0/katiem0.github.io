@@ -1,6 +1,192 @@
 ---
 ---
 
-@import '{{ site.theme }}';
+@import 'jekyll-theme-chirpy';
 
-/* append your custom style below */
+/* Custom styles for enhanced About Me section */
+
+/* Hero section styling */
+.hero-section {
+  margin-bottom: 3rem;
+}
+
+/* Card hover effects */
+.home-content .card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.home-content .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Emoji sizing consistency */
+.home-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Better spacing for lists */
+.home-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Quote styling */
+.home-content em {
+  font-size: 1.1rem;
+  color: var(--text-muted-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-content .card-body {
+    padding: 1rem;
+  }
+}
+
+.home-content .card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border-color, var(--main-border-color));
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  
+  .card-body {
+    .card-title {
+      color: var(--heading-color);
+      font-weight: 600;
+    }
+    
+    .card-text {
+      color: var(--text-color);
+    }
+  }
+}
+
+.home-content .card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow);
+  background-color: var(--card-hovor-bg);
+}
+
+/* Light mode specific card styling */
+html[data-mode='light'] .home-content .card,
+html:not([data-mode]) .home-content .card {
+  background-color: #f8f9fa;
+  
+  &:hover {
+    background-color: #e9ecef;
+  }
+}
+
+/* Dark mode specific card styling */
+html[data-mode='dark'] .home-content .card {
+  background-color: var(--card-bg);
+  
+  &:hover {
+    background-color: var(--card-hovor-bg);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) .home-content .card {
+    background-color: var(--card-bg);
+    
+    &:hover {
+      background-color: var(--card-hovor-bg);
+    }
+  }
+}
+
+/* Add some personality with accent colors */
+.home-content h5.card-title {
+  color: var(--link-color);
+  font-weight: 600;
+}
+
+/* Custom styles to make sidebar text more visible */
+/* Since sidebar has dark background in both modes, use light text always */
+#sidebar {
+  .site-title {
+    color: #ffffff !important;
+  }
+
+  .site-subtitle {
+    color: #e0e0e0 !important;
+  }
+
+  ul li a.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    
+    i {
+      color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    &:hover {
+      color: #ffffff !important;
+      
+      i {
+        color: #ffffff !important;
+      }
+    }
+  }
+  
+  ul li.active a.nav-link {
+    color: #ffffff !important;
+    
+    i {
+      color: #ffffff !important;
+    }
+  }
+
+  .sidebar-bottom {
+    /* Mode toggle button specific styling */
+    .mode-toggle {
+      background-color: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      
+      i {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        
+        i {
+          color: #ffffff !important;
+        }
+      }
+    }
+    
+    /* Social media links - ensure they're visible */
+    a {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      color: var(--sidebar-bg) !important;
+      
+      i {
+        color: #185422 !important; /* Use your brand green color */
+      }
+      
+      &:hover {
+        background-color: #ffffff !important;
+        transform: scale(1.1);
+        
+        i {
+          color: #185422 !important;
+        }
+      }
+    }
+    
+    /* Icon border separator */
+    .icon-border {
+      background-color: rgba(255, 255, 255, 0.3) !important;
+    }
+  }
+}
+
+/* Remove search from topbar */
+#search-trigger, 
+#search-wrapper, 
+#search-cancel, 
+#search-result-wrapper {
+  display: none !important;
+}
