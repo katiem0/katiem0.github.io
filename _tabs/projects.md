@@ -48,6 +48,25 @@ A GitHub CLI extension to list and create environment metadata, including secret
 gh extension install katiem0/gh-environments
 ```
 
+### [gh-migrate-rulesets](https://github.com/katiem0/gh-migrate-rulesets)
+
+![GitHub Stars](https://img.shields.io/github/stars/katiem0/gh-migrate-rulesets?style=social)
+![Release](https://img.shields.io/github/v/release/katiem0/gh-migrate-rulesets)
+![License](https://img.shields.io/github/license/katiem0/gh-migrate-rulesets)
+
+A GitHub CLI extension to create and generate a report of repository rulesets for repos and orgs.
+
+**Key Features:**
+- Generate comprehensive reports of existing repository rulesets
+- Export ruleset configurations for backup and audit purposes
+- Migrate rulesets between organizations or repositories
+- Support for both organization-level and repository-level rulesets
+
+**Installation:**
+```bash
+gh extension install katiem0/gh-migrate-rulesets
+```
+
 ### [gh-seva](https://github.com/katiem0/gh-seva)
 
 ![GitHub Stars](https://img.shields.io/github/stars/katiem0/gh-seva?style=social)
