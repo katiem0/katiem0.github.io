@@ -72,11 +72,13 @@ export function initClipboard() {
             return trigger;
           }
           
+          // First, try to find simple code structure (console/plaintext)
           const simpleCode = codeBlock.querySelector('.highlight > code');
           if (simpleCode) {
             return simpleCode;
           }
 
+          // Then try table-based structure (with line numbers)
           const codeElement = 
             codeBlock.querySelector('td.rouge-code') ||
             codeBlock.querySelector('.rouge-code') ||
@@ -94,7 +96,6 @@ export function initClipboard() {
         }
       }
     });
-
     const clipboardList = document.querySelectorAll(clipboardSelector);
     [...clipboardList].map(
       (elem) =>
