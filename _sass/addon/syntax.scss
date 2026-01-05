@@ -151,6 +151,7 @@ div {
   &.nolineno,
   &.language-plaintext,
   &.language-console,
+  &.language-bash,
   &.language-terminal {
     pre.lineno {
       display: none;
