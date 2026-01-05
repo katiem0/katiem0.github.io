@@ -53,12 +53,11 @@ html {
 }
 
 .highlight {
-  border-radius: vars.$base-radius;
+  @extend %rounded;
   @extend %code-snippet-bg;
-  background-color: var(--highlight-bg-color);
 
   @at-root figure#{&} {
-    background-color: var(--highlight-bg-color);
+    @extend %code-snippet-bg;
   }
 
   overflow: auto;
@@ -90,7 +89,8 @@ html {
     -ms-user-select: none;
     user-select: none;
   }
-} /* .highlight */
+}
+
 
 code {
   -webkit-hyphens: none;
@@ -125,7 +125,6 @@ code {
     color: inherit;
   }
 }
-
 td.rouge-code {
   @extend %code-snippet-padding;
 
@@ -141,7 +140,7 @@ td.rouge-code {
 }
 
 div[class^='language-'] {
-  border-radius: vars.$base-radius;
+  @extend %rounded;
   @extend %code-snippet-bg;
 
   box-shadow: var(--language-border-color) 0 0 0 1px;
@@ -149,8 +148,36 @@ div[class^='language-'] {
   .post-content > & {
     margin-left: -1.25rem;
     margin-right: -1.25rem;
+    padding: 0.75rem 1.25rem;
 
     border-radius: 0;
+  }
+
+  .highlight {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+  }
+  code {
+    display: block;
+    color: var(--highlighter-rouge-color);
+    padding: 0.5rem 0;
+    overflow-x: auto;
+    
+    // If HTML is escaped, at least make it readable
+    &:not(.hljs) {
+      color: var(--highlighter-rouge-color); // This already adapts to theme
+      white-space: pre;
+    }
+  }
+
+  // Ensure proper text color for all language blocks
+  pre {
+    color: var(--text-color);
+    
+    code {
+      color: inherit;
+    }
   }
 }
 
@@ -216,8 +243,8 @@ div {
 
   /* clipboard */
   button {
-    cursor: pointer;
-    border-radius: vars.$base-radius;
+    @extend %cursor-pointer;
+    @extend %rounded;
 
     border: 1px solid transparent;
     height: $code-header-height;
