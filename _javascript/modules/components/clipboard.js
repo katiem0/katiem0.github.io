@@ -96,6 +96,7 @@ export function initClipboard() {
         }
       }
     });
+
     const clipboardList = document.querySelectorAll(clipboardSelector);
     [...clipboardList].map(
       (elem) =>
