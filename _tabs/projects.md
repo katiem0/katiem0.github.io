@@ -26,7 +26,7 @@ A GitHub CLI extension to create a Bitbucket Cloud archive for import to GitHub 
 
 **Installation:**
 
-```shell
+```bash
 gh extension install katiem0/gh-bbc-exporter
 ```
 
@@ -66,7 +66,7 @@ A GitHub CLI extension to create and generate a report of repository rulesets fo
 
 **Installation:**
 
-```shell
+```bash
 gh extension install katiem0/gh-migrate-rulesets
 ```
 
@@ -86,7 +86,7 @@ A GitHub CLI extension to manage Secrets and Variables for organizations and rep
 
 **Installation:**
 
-```shell
+```bash
 gh extension install katiem0/gh-seva
 ```
 

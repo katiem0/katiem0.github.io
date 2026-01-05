@@ -72,13 +72,15 @@ export function initClipboard() {
             return trigger;
           }
           
-          // Try multiple selectors to find the code content
+          const simpleCode = codeBlock.querySelector('.highlight > code');
+          if (simpleCode) {
+            return simpleCode;
+          }
+
           const codeElement = 
-            codeBlock.querySelector('code .rouge-code') ||
+            codeBlock.querySelector('td.rouge-code') ||
             codeBlock.querySelector('.rouge-code') ||
-            codeBlock.querySelector('code') ||
-            codeBlock.querySelector('pre') ||
-            codeBlock;
+            codeBlock.querySelector('code');
           
           if (!codeElement) {
             console.warn('No code element found, returning code block');
