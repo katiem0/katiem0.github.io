@@ -64,8 +64,12 @@ export function initClipboard() {
   if ($(clipboardSelector).length) {
     const clipboard = new ClipboardJS(clipboardSelector, {
       target(trigger) {
-        let codeBlock = trigger.parentNode.nextElementSibling;
-        return codeBlock.querySelector('code .rouge-code');
+        const codeBlock = trigger.parentNode.nextElementSibling;
+        return (
+          codeBlock.querySelector('code .rouge-code') ||
+          codeBlock.querySelector('code') ||
+          codeBlock
+        );
       }
     });
 
