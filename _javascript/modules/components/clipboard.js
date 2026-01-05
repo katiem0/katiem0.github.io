@@ -64,15 +64,32 @@ export function initClipboard() {
   if ($(clipboardSelector).length) {
     const clipboard = new ClipboardJS(clipboardSelector, {
       target(trigger) {
-        const codeBlock = trigger.parentNode.nextElementSibling;
-        if (!codeBlock) {
+        try {
+          const codeBlock = trigger.parentNode.nextElementSibling;
+          
+          if (!codeBlock) {
+            console.warn('No code block found for clipboard trigger');
+            return trigger;
+          }
+          
+          // Try multiple selectors to find the code content
+          const codeElement = 
+            codeBlock.querySelector('code .rouge-code') ||
+            codeBlock.querySelector('.rouge-code') ||
+            codeBlock.querySelector('code') ||
+            codeBlock.querySelector('pre') ||
+            codeBlock;
+          
+          if (!codeElement) {
+            console.warn('No code element found, returning code block');
+            return codeBlock;
+          }
+          
+          return codeElement;
+        } catch (error) {
+          console.error('Error in clipboard target function:', error);
           return trigger;
         }
-        return (
-          codeBlock.querySelector('code .rouge-code') ||
-          codeBlock.querySelector('code') ||
-          codeBlock
-        );
       }
     });
 
