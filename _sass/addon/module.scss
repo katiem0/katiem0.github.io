@@ -2,12 +2,18 @@
 * Mainly scss modules, only imported to `assets/css/main.scss`
 */
 
+@use 'variables' as *;
+
 /* ---------- scss placeholder --------- */
 
 %heading {
   color: var(--heading-color);
   font-weight: 400;
   font-family: $font-family-heading;
+}
+
+%text-color {
+  color: var(--text-color);
 }
 
 %section {

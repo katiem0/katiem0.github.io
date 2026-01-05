@@ -86,7 +86,7 @@ A GitHub CLI extension to manage Secrets and Variables for organizations and rep
 
 **Installation:**
 
-```shell
+```shll
 gh extension install katiem0/gh-seva
 ```
 

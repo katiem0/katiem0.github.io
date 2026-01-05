@@ -2,29 +2,35 @@
 * The syntax highlight.
 */
 
-@import 'colors/light-syntax';
-@import 'colors/dark-syntax';
+@use 'variables' as vars;
+@use 'module' as mod;
+@use '../colors/light-syntax' as light-syntax;
+@use '../colors/dark-syntax' as dark-syntax;
+
+:root {
+  @include light-syntax.light-syntax;
+}
 
 html {
   @media (prefers-color-scheme: light) {
     &:not([data-mode]),
     &[data-mode='light'] {
-      @include light-syntax;
+      @include light-syntax.light-syntax;
     }
 
     &[data-mode='dark'] {
-      @include dark-syntax;
+      @include dark-syntax.dark-syntax;
     }
   }
 
   @media (prefers-color-scheme: dark) {
     &:not([data-mode]),
     &[data-mode='dark'] {
-      @include dark-syntax;
+      @include dark-syntax.dark-syntax;
     }
 
     &[data-mode='light'] {
-      @include light-syntax;
+      @include light-syntax.light-syntax;
     }
   }
 }
@@ -47,11 +53,12 @@ html {
 }
 
 .highlight {
-  @extend %rounded;
+  border-radius: vars.$base-radius;
   @extend %code-snippet-bg;
+  background-color: var(--highlight-bg-color);
 
   @at-root figure#{&} {
-    @extend %code-snippet-bg;
+    background-color: var(--highlight-bg-color);
   }
 
   overflow: auto;
@@ -60,7 +67,7 @@ html {
 
   pre {
     margin-bottom: 0;
-    font-size: $code-font-size;
+    font-size: vars.$code-font-size;
     line-height: 1.4rem;
     word-wrap: normal; /* Fixed Safari overflow-x */
   }
@@ -91,7 +98,7 @@ code {
   hyphens: none;
 
   &.highlighter-rouge {
-    font-size: $code-font-size;
+    font-size: vars.$code-font-size;
     padding: 3px 5px;
     word-break: break-word;
     border-radius: 4px;
@@ -134,13 +141,14 @@ td.rouge-code {
 }
 
 div[class^='language-'] {
-  @extend %rounded;
+  border-radius: vars.$base-radius;
   @extend %code-snippet-bg;
 
   box-shadow: var(--language-border-color) 0 0 0 1px;
 
   .post-content > & {
-    @include ml-mr(-1.25rem);
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
 
     border-radius: 0;
   }
@@ -165,7 +173,10 @@ div {
 }
 
 .code-header {
-  @extend %no-cursor;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   $code-header-height: 2.25rem;
 
@@ -205,8 +216,8 @@ div {
 
   /* clipboard */
   button {
-    @extend %cursor-pointer;
-    @extend %rounded;
+    cursor: pointer;
+    border-radius: vars.$base-radius;
 
     border: 1px solid transparent;
     height: $code-header-height;
@@ -245,13 +256,15 @@ div {
 @media all and (min-width: 576px) {
   div[class^='language-'] {
     .post-content > & {
-      @include ml-mr(0);
+      margin-left: 0;
+      margin-right: 0;
 
-      border-radius: $base-radius;
+      border-radius: vars.$base-radius;
     }
 
     .code-header {
-      @include ml-mr(0);
+      margin-left: 0;
+      margin-right: 0;
 
       &::before {
         $dot-size: 0.75rem;

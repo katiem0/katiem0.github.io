@@ -64,36 +64,32 @@ export function initClipboard() {
   if ($(clipboardSelector).length) {
     const clipboard = new ClipboardJS(clipboardSelector, {
       target(trigger) {
-        try {
-          const codeBlock = trigger.parentNode.nextElementSibling;
-          
-          if (!codeBlock) {
-            console.warn('No code block found for clipboard trigger');
-            return trigger;
-          }
-          
-          // First, try to find simple code structure (console/plaintext)
-          const simpleCode = codeBlock.querySelector('.highlight > code');
-          if (simpleCode) {
-            return simpleCode;
-          }
-
-          // Then try table-based structure (with line numbers)
-          const codeElement = 
-            codeBlock.querySelector('td.rouge-code') ||
-            codeBlock.querySelector('.rouge-code') ||
-            codeBlock.querySelector('code');
-          
-          if (!codeElement) {
-            console.warn('No code element found, returning code block');
-            return codeBlock;
-          }
-          
-          return codeElement;
-        } catch (error) {
-          console.error('Error in clipboard target function:', error);
+        // Get the parent code-header div
+        const codeHeader = trigger.parentNode;
+        if (!codeHeader) {
           return trigger;
         }
+
+        // Get the next sibling which is the .highlight div
+        const highlightDiv = codeHeader.nextElementSibling;
+        if (!highlightDiv) {
+          return trigger;
+        }
+
+        // Try to find the rouge-code td (for table-based structure with line numbers)
+        const rougeCode = highlightDiv.querySelector('td.rouge-code pre');
+        if (rougeCode) {
+          return rougeCode;
+        }
+
+        // Try simple code structure (for console/plaintext/shell without table)
+        const simpleCode = highlightDiv.querySelector('code');
+        if (simpleCode) {
+          return simpleCode;
+        }
+
+        // Fallback to the highlight div itself
+        return highlightDiv;
       }
     });
 
