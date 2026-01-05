@@ -25,7 +25,8 @@ A GitHub CLI extension to create a Bitbucket Cloud archive for import to GitHub 
 - Supports both Basic Authentication and Access Tokens
 
 **Installation:**
-```bash
+
+```sh
 gh extension install katiem0/gh-bbc-exporter
 ```
 
@@ -44,7 +45,8 @@ A GitHub CLI extension to list and create environment metadata, including secret
 - Manage environment secrets and variables
 
 **Installation:**
-```bash
+
+```sh
 gh extension install katiem0/gh-environments
 ```
 
@@ -63,7 +65,8 @@ A GitHub CLI extension to create and generate a report of repository rulesets fo
 - Support for both organization-level and repository-level rulesets
 
 **Installation:**
-```bash
+
+```sh
 gh extension install katiem0/gh-migrate-rulesets
 ```
 
@@ -82,7 +85,8 @@ A GitHub CLI extension to manage Secrets and Variables for organizations and rep
 - Support for GitHub Actions, Dependabot, and Codespaces secrets
 
 **Installation:**
-```bash
+
+```sh
 gh extension install katiem0/gh-seva
 ```
 
