@@ -63,33 +63,45 @@ export function initClipboard() {
   // Initial the clipboard.js object
   if ($(clipboardSelector).length) {
     const clipboard = new ClipboardJS(clipboardSelector, {
-      target(trigger) {
-        // Get the parent code-header div
+      text(trigger) {
+        // Use text function exclusively to avoid target validation issues
         const codeHeader = trigger.parentNode;
         if (!codeHeader) {
-          return trigger;
+          console.warn('No code header found for clipboard button');
+          return '';
         }
 
-        // Get the next sibling which is the .highlight div
         const highlightDiv = codeHeader.nextElementSibling;
         if (!highlightDiv) {
-          return trigger;
+          console.warn('No highlight div found after code header');
+          return '';
         }
 
         // Try to find the rouge-code td (for table-based structure with line numbers)
         const rougeCode = highlightDiv.querySelector('td.rouge-code pre');
         if (rougeCode) {
-          return rougeCode;
+          return rougeCode.textContent || '';
         }
 
         // Try simple code structure (for console/plaintext/shell without table)
         const simpleCode = highlightDiv.querySelector('code');
         if (simpleCode) {
-          return simpleCode;
+          return simpleCode.textContent || '';
         }
 
-        // Fallback to the highlight div itself
-        return highlightDiv;
+        // For direct pre/code structure without nested elements
+        const directPre = highlightDiv.querySelector('pre');
+        if (directPre) {
+          return directPre.textContent || '';
+        }
+
+        // If highlight div contains just text without wrapper elements
+        if (highlightDiv.classList.contains('highlight')) {
+          return highlightDiv.textContent || '';
+        }
+
+        console.warn('Could not extract text from code block');
+        return '';
       }
     });
 
@@ -119,8 +131,18 @@ export function initClipboard() {
         unlock(trigger);
       }, TIMEOUT);
     });
-  }
 
+    clipboard.on('error', (e) => {
+      console.error('Clipboard copy failed:', e);
+      // Fallback to manual copy
+      const text = e.text || '';
+      if (text && navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          console.log('Fallback copy successful');
+        });
+      }
+    });
+  }
   /* --- Post link sharing --- */
 
   $('#copy-link').on('click', (e) => {
