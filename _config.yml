@@ -23,7 +23,7 @@ title: Katie May # the main title
 tagline: DevOps Engineer  # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A sample description for visibility.
+  Sharing insights on DevOps, GitHub CLI extensions, automation, and developer experience.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: ''
@@ -51,10 +51,6 @@ google_site_verification:  # change to your verification string
 
 google_analytics:
   id:  # fill in your Google Analytics ID
-  # Google Analytics pageviews report settings
-  pv:
-    proxy_endpoint: # fill in the Google Analytics superProxy endpoint of Google App Engine
-    cache_path: # the local PV cache data, friendly to visitors from GFW region
 
 # Prefer color scheme setting.
 #
@@ -111,7 +107,9 @@ assets:
     env: # [development|production]
 
 pwa:
-  enabled: false # the option for PWA feature
+  enabled: true # the option for PWA feature (installable)
+  cache:
+    enabled: true
 
 paginate: 10
 
