@@ -31,9 +31,41 @@ layout: default
         <h1 class="dynamic-title">
           {{ title }}
         </h1>
+
+        {% if page.collection == 'demos' %}
+          <div class="demo-meta text-muted mb-4">
+            {% if page.date %}
+              <span class="me-3">
+                <i class="far fa-calendar fa-fw me-1"></i>
+                {% include datetime.html date=page.date lang=lang %}
+              </span>
+            {% endif %}
+            <span class="me-3">
+              <i class="far fa-clock fa-fw me-1"></i>
+              {% include read-time.html content=_content prompt=true lang=lang %}
+            </span>
+          </div>
+        {% endif %}
+
         <div class="post-content">
           {{ _content }}
         </div>
+
+        {% if page.collection == 'demos' %}
+          <div class="demo-footer mt-5 pt-4">
+            {% if page.repo %}
+              <a class="btn demo-repo-btn mb-3" href="{{ page.repo }}"
+                target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github fa-fw me-1"></i>View the repository
+              </a>
+            {% endif %}
+            <p class="mb-0">
+              <a href="{{ '/demos/' | relative_url }}">
+                <i class="fas fa-arrow-left fa-fw me-1"></i>Back to Demos and Workshops
+              </a>
+            </p>
+          </div>
+        {% endif %}
       {% else %}
         {{ _content }}
       {% endif %}
