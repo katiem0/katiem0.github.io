@@ -27,7 +27,10 @@
             {% else %}
               <span>{{ page.title }}</span>
             {% endif %}
-
+            {% elsif page.collection == 'demos' and item == 'demos' %}
+              <span>
+                <a href="{{ '/demos/' | relative_url }}">Demos and Workshops</a>
+              </span>
           {% elsif page.layout == 'category' or page.layout == 'tag' %}
             <span>
               <a href="{{ item | relative_url }}">
