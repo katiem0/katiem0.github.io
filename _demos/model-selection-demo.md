@@ -1,6 +1,6 @@
 ---
 title: "Model Selection & Token Efficiency"
-date: 2026-07-01 09:00:00 -0400
+date: 2026-06-22 09:00:00 -0400
 description: A hands-on workshop for choosing the right GitHub Copilot model for each task and cutting token waste - covering the three model tiers, prompt efficiency, phased Research → Plan → Implement workflows, and practical context management.
 tags: [GitHub Copilot, Beginner, Intermediate, Workshop]
 repo: https://github.com/katiem0/model-selection-demo
