@@ -1,0 +1,7 @@
+name: "katiem0.github.io CodeQL configuration"
+
+paths-ignore:
+  - "assets/js/pwa/app.js"
+  - "assets/js/pwa/sw.js"
+  - "assets/js/pwa/unregister.js"
+  - "assets/js/data/swcache.js"
