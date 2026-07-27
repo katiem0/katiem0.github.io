@@ -45,8 +45,7 @@ const config = [
       nodeResolve(),
       babel({
         babelHelpers: 'bundled',
-        presets: ['@babel/preset-env'],
-        plugins: ['@babel/plugin-proposal-class-properties']
+        presets: ['@babel/preset-env']
       }),
       isProd && terser(),
       cleanup(),
