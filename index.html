@@ -3,105 +3,119 @@ layout: home
 title: Home
 ---
 
-# About Me
+<article class="about-page">
+  <header class="about-intro">
+    <p class="about-kicker">Senior Customer Success Architect at GitHub</p>
+    <h1>Hi, I'm Katie May.</h1>
+    <p>
+      Based in New York, I specialize in helping organizations transform their
+      development workflows through innovative automation and tooling, including
+      practical, everyday use of GitHub Copilot and AI-assisted development to
+      help teams plan, build, test, and ship software more effectively.
+    </p>
+  </header>
 
-Hi there! 👋 I'm Katie May
-
-I'm a Senior Customer Success Architect at GitHub, based in New York. I specialize in
-helping organizations transform their development workflows through innovative
-automation and tooling — including practical, everyday use of GitHub Copilot
-and AI-assisted development to help teams plan, build, test, and ship software
-more effectively.
-
-## What I Do
-
-My work centers on helping teams get real value from AI in their everyday
-development workflow:
-
-🤖 **GitHub Copilot Adoption** - Leading enterprise Copilot rollouts, from first pilot to org-wide adoption and measurable impact  
-🧠 **AI Workflow Enablement** - Partnering with enterprises to scale AI-assisted development across teams — training and empowering engineers on agentic workflows, prompt strategy, and Copilot customization to accelerate growth and build lasting internal capability  
-⚙️ **Model Selection & Efficiency** - Helping teams pick the right model for the job and optimize token and cost efficiency  
-🚀 **Developer Experience** - Building CLI tools and automation that make developers' lives easier  
-🎯 **Customer Success** - Running hands-on demos and workshops that turn curiosity about AI into confident, day-to-day practice
-
-## My Journey
-
-My path in tech has taken me through various roles that shaped my holistic approach to DevOps:
-
-- **GitHub** (Current) - Senior Customer Success Architect, driving enterprise transformations
-- **CircleCI** - Senior DevOps Customer Engineer, optimizing CI/CD workflows
-- **M&T Bank** - Developed containerized solutions for OpenShift/Kubernetes platforms
-
-This diverse background gives me a unique perspective on the entire development lifecycle, from code to deployment — and on how AI now fits into every stage of it.
-
-## Technical Toolbox
-
-<div class="row g-3 mb-4">
-  <div class="col-md-6">
-    <div class="card h-100 border-0">
-      <div class="card-body">
-        <h5 class="card-title">🤖 AI &amp; Copilot</h5>
-        <p class="card-text">Copilot Agentic Workflows, Customizations, Custom Agents, MCP</p>
+  <section class="about-section">
+    <h2>What I Do</h2>
+    <p class="section-intro">My work centers on helping teams get real value from AI in their everyday development workflow.</p>
+    <div class="work-list">
+      <div class="work-item">
+        <div>
+          <h3>GitHub Copilot Adoption</h3>
+          <p>Leading enterprise Copilot rollouts, from first pilot to organization-wide adoption and measurable impact.</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <div>
+          <h3>AI Workflow Enablement</h3>
+          <p>Partnering with enterprises to scale AI-assisted development across teams, training and empowering engineers on agentic workflows, prompt strategy, and Copilot customization to accelerate growth and build lasting internal capability.</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <div>
+          <h3>Model Selection &amp; Efficiency</h3>
+          <p>Helping teams pick the right model for the job and optimize token and cost efficiency.</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <div>
+          <h3>Developer Experience</h3>
+          <p>Building CLI tools and automation that make developers' lives easier.</p>
+        </div>
+      </div>
+      <div class="work-item">
+        <div>
+          <h3>Customer Success</h3>
+          <p>Running hands-on demos and workshops that turn curiosity about AI into confident, day-to-day practice.</p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card h-100 border-0">
-      <div class="card-body">
-        <h5 class="card-title">🐙 GitHub Platform</h5>
-        <p class="card-text">Actions, Copilot, Enterprise, CLI Extensions, API Integration</p>
-      </div>
+  </section>
+
+  <section class="about-section">
+    <h2>My Journey</h2>
+    <p>My path in tech has taken me through various roles that shaped my holistic approach to DevOps:</p>
+    <ul class="journey-list">
+      <li>
+        <span class="journey-company">GitHub <small>Current</small></span>
+        <span>Senior Customer Success Architect, driving enterprise transformations</span>
+      </li>
+      <li>
+        <span class="journey-company">CircleCI</span>
+        <span>Senior DevOps Customer Engineer, optimizing CI/CD workflows</span>
+      </li>
+      <li>
+        <span class="journey-company">M&amp;T Bank</span>
+        <span>Developed containerized solutions for OpenShift and Kubernetes platforms</span>
+      </li>
+    </ul>
+    <p>
+      This diverse background gives me a unique perspective on the entire
+      development lifecycle, from code to deployment, and on how AI now fits into
+      every stage of it.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <h2>Technical Toolbox</h2>
+    <div class="toolbox-grid">
+      <div><h3>AI &amp; Copilot</h3><p>Copilot agentic workflows, customizations, custom agents, and MCP</p></div>
+      <div><h3>GitHub Platform</h3><p>Actions, Copilot, Enterprise, CLI extensions, and API integration</p></div>
+      <div><h3>Languages</h3><p>JavaScript, Bash, Python, Go, C#, and TypeScript</p></div>
+      <div><h3>Containers &amp; Cloud</h3><p>Docker, Kubernetes, OpenShift, Helm, and AWS</p></div>
+      <div><h3>CI/CD Platforms</h3><p>GitHub Actions, CircleCI, Azure DevOps, and GitLab</p></div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card h-100 border-0">
-      <div class="card-body">
-        <h5 class="card-title">💻 Languages</h5>
-        <p class="card-text">JavaScript, Bash, Python, Go, C#, TypeScript</p>
-      </div>
+  </section>
+
+  <section class="about-section">
+    <h2>Projects, Demos &amp; Workshops</h2>
+    <p class="section-intro">I build things to help teams work better with GitHub and AI, from tools that solve real problems to hands-on demos that make new practices tangible.</p>
+    <div class="featured-work">
+      <a href="{{ '/projects/' | relative_url }}" class="featured-work-item">
+        <div>
+          <span class="featured-work-label">Open source</span>
+          <h3>CLI Extensions</h3>
+          <p>Several GitHub CLI extensions used by teams worldwide to manage their GitHub environments more efficiently, covering migration, secure environment management, and organization administration.</p>
+        </div>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+      <a href="{{ '/demos/' | relative_url }}" class="featured-work-item">
+        <div>
+          <span class="featured-work-label">Hands-on learning</span>
+          <h3>Demos &amp; Workshops</h3>
+          <p>Hands-on walkthroughs that show GitHub Copilot and AI-assisted development in action, each with a companion repository you can follow along with.</p>
+        </div>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card h-100 border-0">
-      <div class="card-body">
-        <h5 class="card-title">🐳 Containers &amp; Cloud</h5>
-        <p class="card-text">Docker, Kubernetes, OpenShift, Helm, AWS</p>
-      </div>
+  </section>
+
+  <section class="about-connect">
+    <h2>Let's Connect</h2>
+    <p>I love connecting with fellow developers and AI enthusiasts, whether you want to level up your team's Copilot adoption, collaborate on open source projects, or talk about AI and developer experience.</p>
+    <div class="connect-links">
+      <a href="https://github.com/katiem0"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/katiemay0/"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card h-100 border-0">
-      <div class="card-body">
-        <h5 class="card-title">🔄 CI/CD Platforms</h5>
-        <p class="card-text">GitHub Actions, CircleCI, Azure DevOps, GitLab</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-## Projects, Demos & Workshops
-
-I build things to help teams work better with GitHub and AI from tools that
-solve real problems to hands-on demos that make new practices tangible.
-
-**🛠️ CLI Extensions**: Several GitHub CLI extensions used by teams worldwide to
-manage their GitHub environments more efficiently, covering migration, secure
-environment management, and organization administration. Explore them on my
-[CLI Extensions](/projects/) page.
-
-**🎓 Demos & Workshops**: Hands-on walkthroughs that show GitHub Copilot and
-AI-assisted development in action (agentic workflows, Copilot customization,
-model selection, and building faster) each with a companion repository you can
-follow along with. Browse them on my [Demos and Workshops](/demos/) page.
-
-## Let's Connect!
-
-I love connecting with fellow developers and AI enthusiasts! Whether you:
-- Want to get started with GitHub Copilot or level up your team's adoption
-- Have questions about agentic workflows, Copilot customization, or model selection
-- Want to collaborate on open source projects
-- Just want to chat about AI and developer experience
-
-Feel free to reach out! You can find me on [GitHub](https://github.com/katiem0) or [LinkedIn](https://www.linkedin.com/in/katiemay0/).
-
----
+  </section>
+</article>
